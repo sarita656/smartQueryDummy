@@ -1,0 +1,117 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Transctions Details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> <table >
+    <tr>
+      <th style="text-align: center;">Symbol</th>
+      <th style="text-align: center;">Name</th>
+      <th style="text-align: center;">Currency</th>
+      <th style="text-align: center;">Stock Exchange</th>
+      <th style="text-align: center;">Exchange Short Name</th>
+
+    </tr>
+    
+    <tr *ngFor="let data of ShowData" style="text-align: center;">
+      <td>{{data.symbol}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.currency}}</td>
+      <td>{{data.stockExchange}}</td>
+      <td>{{data.exchangeShortName}}</td>
+
+    </tr>   
+  </table>
+ 
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<div class="base">
+  <h1 style="margin-left: 40%;margin-top:15%;font-size:3em;">
+    <p>
+      <span style='color:blue'>S</span>
+      <span style='color: red'>m</span>
+      <span style='color: blueviolet'>a</span>
+      <span style='color: greenyellow'>r</span>
+      <span style='color: red'>t</span>
+      <span style='color: green'> Q</span>
+      <span style='color:palevioletred'>u</span>
+      <span style='color:yellowgreen'>e</span>
+      <span style='color: red'>r</span>
+      <span style='color: green'>y</span>
+    </p>
+  </h1>
+  <div class="wrap">
+    <label (click)="openLg(content)" class="logoutLblPos">
+      <div style="background-color:#fff; float:left; text-align:center; padding:5px;">
+        <i class="fa fa-list"></i><br>
+        Transctions
+      </div>
+    </label>
+        <form (submit)="showMessage()">
+          <div class="search">
+            <input [(ngModel)]="searchQuery" name="searchQuery" autocomplete="off" type="text" class="searchTerm"
+              id="inputbox" placeholder="Search here?">
+            <span class="fa fa search icon"></span>
+          </div>
+          <button type="submit" class="btn">
+            Search
+          </button>
+        </form>
+        <div style="margin-left: 39%;margin-top: 12%;">
+          {{showsearch}}
+
+        </div>
+  </div>
+
+</div>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container" style="margin-top: 8%;">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="row">
+      <div id="logo" class="text-center">
+        <h1>Smart Query</h1>
+      </div>
+      <form role="form" id="form-buscar">
+        <div class="form-group">
+          <div class="input-group">
+            <input id="1" class="form-control" type="text" name="search" placeholder="Search..." required />
+            
+              <button class="btn btn-success" type="submit">
+                <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+              </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->
